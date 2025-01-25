@@ -12,13 +12,12 @@ const MyProfile = () => {
   });
   const [isEdit, setIsEdit] = useState(false);
   return (
-    <div className="flex flex-col md:flex-row gap-2 text-sm">
+    <div className=" max-w-3xl flex flex-col md:flex-row gap-2 text-sm">
       <img className="w-36 h-36 rounded-md " src={userData.image} alt="" />
-      <div className="md:mx-20">
+      <div className=" md:mx-20">
         <div className="text-2xl md:text-3xl lg:text-5xl font-bold text-gray-700 mb-2">
           {isEdit ? (
             <input
-              className="bg-gray-100"
               placeholder="Enter Name"
               type="text"
               onChange={(e) =>
@@ -40,7 +39,6 @@ const MyProfile = () => {
               Email Id:{" "}
               {isEdit ? (
                 <input
-                  className="bg-gray-100"
                   placeholder="Enter Email Id"
                   type="text"
                   onChange={(e) =>
@@ -55,7 +53,6 @@ const MyProfile = () => {
               Contact Number:{" "}
               {isEdit ? (
                 <input
-                  className="bg-gray-100"
                   placeholder="Enter Contact Number"
                   type="text"
                   onChange={(e) =>
@@ -70,7 +67,6 @@ const MyProfile = () => {
               Address:{" "}
               {isEdit ? (
                 <input
-                  className="bg-gray-100"
                   placeholder="Enter Address"
                   type="text"
                   onChange={(e) =>
@@ -95,16 +91,17 @@ const MyProfile = () => {
               Gender:{" "}
               {isEdit ? (
                 <select
-                  className="w-96 bg-gray-100"
+                  placeholder="Select gender"
+                  className="w-64 text-gray-500"
                   onChange={(e) =>
                     setUserData((prev) => ({ ...prev, gender: e.target.value }))
                   }
                   value={userData.gender}
                 >
-                  <option value="Male"></option>
-                  <option value="Female"></option>
-                  <option value="Transgender"></option>
-                  <option value="Other"></option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Transgender">Transgender</option>
+                  <option value="Other">Other</option>
                 </select>
               ) : (
                 <p className="text-gray-500 mx-2">{userData.gender}</p>
@@ -112,11 +109,21 @@ const MyProfile = () => {
             </p>
           </div>
         </div>
-        <div>
+        <div className="mt-10">
           {isEdit ? (
-            <button onClick={() => setIsEdit(false)}>Save Information</button>
+            <button
+              className="border border-primary px-8 py-2 rounded-full hover:bg-primary hover:text-white transition-all"
+              onClick={() => setIsEdit(false)}
+            >
+              Save Information
+            </button>
           ) : (
-            <button onClick={() => setIsEdit(true)}>Edit</button>
+            <button
+              className="border border-primary px-8 py-2 rounded-full hover:bg-primary hover:text-white transition-all"
+              onClick={() => setIsEdit(true)}
+            >
+              Edit
+            </button>
           )}
         </div>
       </div>
