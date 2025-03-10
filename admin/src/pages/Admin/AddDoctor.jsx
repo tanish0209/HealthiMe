@@ -1,5 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { assets } from "../../assets/assets_admin/assets";
+import { AdminContext } from "../../context/AdminContext";
+import { toast } from "react-toastify";
+import axios from "axios";
 
 const AddDoctor = () => {
   const [docImg, setDocImg] = useState(false);
@@ -14,8 +17,55 @@ const AddDoctor = () => {
   const [address1, setAddress1] = useState("");
   const [address2, setAddress2] = useState("");
 
+  const { backendUrl, aToken } = useContext(AdminContext);
+
   const onSubmitHandler = async (e) => {
     e.preventDefault();
+    try {
+      if (!docImg) {
+        return toast.error("Image Not Selected");
+      }
+      const formData = new FormData();
+      formData.append("image", docImg);
+      formData.append("name", name);
+      formData.append("email", email);
+      formData.append("password", password);
+      formData.append("experience", experience);
+      formData.append("fees", Number(fees));
+      formData.append("about", about);
+      formData.append("speciality", speciality);
+      formData.append(
+        "address",
+        JSON.stringify({ line1: address1, line2: address2 })
+      );
+      formData.append("degree", degree);
+
+      formData.forEach((value, key) => {
+        console.log(`${key}:${value}`);
+      });
+
+      const { data } = await axios.post(
+        backendUrl + "/api/admin/add-doctor",
+        formData,
+        { headers: { aToken } }
+      );
+      if (data.success) {
+        toast.success(data.message);
+        setDocImg(false);
+        setName("");
+        setEmail("");
+        setPassword("");
+        setAbout("");
+        setFees("");
+        setAddress1("");
+        setAddress2("");
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error) {
+      toast.error(error.message);
+      console.log(error);
+    }
   };
   return (
     <form onSubmit={onSubmitHandler} className="m-5 w-full">
