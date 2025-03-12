@@ -38,12 +38,12 @@ const Doctors = () => {
         >
           <p
             onClick={() =>
-              speciality === "General physician"
+              speciality === "General Physician"
                 ? navigate("/doctors")
-                : navigate("/doctors/General physician")
+                : navigate("/doctors/General Physician")
             }
             className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
-              speciality === "General physician"
+              speciality === "General Physician"
                 ? "bg-indigo-100 text-black"
                 : ""
             }`}
@@ -78,10 +78,10 @@ const Doctors = () => {
             onClick={() =>
               speciality === "Pediatricians"
                 ? navigate("/doctors")
-                : navigate("/doctors/Pediatricians")
+                : navigate("/doctors/Pediatrician")
             }
             className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
-              speciality === "Pediatricians" ? "bg-indigo-100 text-black" : ""
+              speciality === "Pediatrician" ? "bg-indigo-100 text-black" : ""
             }`}
           >
             Pediatrician
