@@ -88,30 +88,30 @@ export const specialityData = [
 export const doctors = [
     {
         _id: 'doc1',
-        name: 'Dr. Richard James',
+        name: 'Dr. Richa Goel',
         image: doc1,
         speciality: 'General physician',
         degree: 'MBBS',
         experience: '4 Years',
-        about: 'Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies. Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.',
-        fees: 50,
+        about: 'Dr.Richa Goel is a general physician wth 4+years of experience.',
+        fees: 600,
         address: {
-            line1: '17th Cross, Richmond',
-            line2: 'Circle, Ring Road, London'
+            line1: 'J9/87G,VASANT KUNJ',
+            line2: 'NEW DELHI,DELHI'
         }
     },
     {
         _id: 'doc2',
-        name: 'Dr. Emily Larson',
+        name: 'Dr.Ravikant Sharma',
         image: doc2,
-        speciality: 'Gynecologist',
+        speciality: 'Dermatologist',
         degree: 'MBBS',
-        experience: '3 Years',
-        about: 'Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies. Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.',
-        fees: 60,
+        experience: '10+ Years',
+        about: 'Dr.Ravikant Sharma is a dermatologist with 10+ years od experience ',
+        fees: 1000,
         address: {
-            line1: '27th Cross, Richmond',
-            line2: 'Circle, Ring Road, London'
+            line1: 'A2/45 KAMLA NAGAR',
+            line2: 'NEW DELHI,DELHI'
         }
     },
     {
