@@ -15,7 +15,9 @@ connectCloudinary();
 
 //middlewares
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: 'https://healthi-me.vercel.app'
+}));
 
 //API Endpoint
 app.use('/api/admin', adminRouter);
