@@ -15,7 +15,7 @@ const DoctorsList = () => {
       <div className="w-full flex flex-wrap gap-4 pt-5 gap-y-6">
         {doctors.map((item, index) => (
           <div
-            className="border border-indigo-200 rounded-xl w-30 max-w-56 overflow-hidden cursor-pointer group"
+            className="border border-indigo-200 rounded-xl w-full max-w-56 overflow-hidden cursor-pointer group"
             key={index}
           >
             <img
