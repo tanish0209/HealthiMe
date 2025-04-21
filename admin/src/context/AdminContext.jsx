@@ -11,7 +11,7 @@ const AdminContextProvider = (props) => {
   const [doctors, setDoctors] = useState([]);
   const [appointments, setAppointments] = useState([]);
   const [dashData, setDashData] = useState(false);
-  const backendUrl = 'https://healthime.vercel.app/';
+  const backendUrl = 'https://healthime-backend.onrender.com';
   const getAllDoctors = async () => {
     try {
       const { data } = await axios.post(
