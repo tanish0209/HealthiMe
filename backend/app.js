@@ -16,7 +16,7 @@ connectCloudinary();
 //middlewares
 app.use(express.json());
 app.use(cors({
-  origin: 'https://healthi-me.vercel.app'
+  origin: "https://healthime-frontend.onrender.com","https://healthime-admin.onrender.com/"
 }));
 
 //API Endpoint
