@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 export const AppContext = createContext();
 
 const AppContextProvider = (props) => {
-  const backendUrl ='https://healthime.vercel.app/';
+  const backendUrl ='https://healthime-backend.onrender.com';
   const [doctors, setDoctors] = useState([]);
   const [token, setToken] = useState(
     localStorage.getItem("token") ? localStorage.getItem("token") : false
@@ -12,7 +12,7 @@ const AppContextProvider = (props) => {
   const [userData, setUserData] = useState(false);
   const getDoctorsData = async () => {
     try {
-      const { data } = await axios.get(backendUrl + "/api/doctor/list/");
+      const { data } = await axios.get(backendUrl + "/api/doctor/list");
       if (data.success) {
         setDoctors(data.doctors);
       } else {
