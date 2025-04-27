@@ -85,7 +85,9 @@ const NavBar = () => {
           } md:hidden right-0 top-0 bottom-0 z-20 overflow-hidden bg-white transition-all`}
         >
           <div className="flex items-center justify-between px-5 py-6">
-            <img className="w-36" src={assets.logo} alt="" />
+            <div>
+        <p className="text-xl font-bold text-teal-700">HealthiMe</p>
+      </div>
             <img
               className="w-7"
               onClick={() => setShowMenu(false)}
