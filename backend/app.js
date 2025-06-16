@@ -12,7 +12,8 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const allowedOrigins = [
   "https://healthime-admin.onrender.com",
-  "https://healthime-frontend.onrender.com" 
+  "https://healthime-frontend.onrender.com",
+  "http://localhost:5173",
 ];
 connectDB();
 connectCloudinary();
@@ -38,7 +39,7 @@ app.use('/api/doctor', doctorRouter)
 app.use('/api/user', userRouter);
 
 app.get("/", (req, res) => {
-    res.send("API working");
+  res.send("API working");
 });
 
 app.listen(PORT, () => console.log("Server started", PORT));

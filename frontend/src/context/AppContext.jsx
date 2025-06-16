@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 export const AppContext = createContext();
 
 const AppContextProvider = (props) => {
-  const backendUrl ='https://healthime-backend.onrender.com';
+  const backendUrl = "https://healthime-production.up.railway.app";
   const [doctors, setDoctors] = useState([]);
   const [token, setToken] = useState(
     localStorage.getItem("token") ? localStorage.getItem("token") : false
