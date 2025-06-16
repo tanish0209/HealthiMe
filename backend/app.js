@@ -12,8 +12,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const allowedOrigins = [
   "https://healthime-admin.onrender.com",
-  "https://healthime-frontend.onrender.com",
-  "http://localhost:5173",
+  "https://healthime-frontend.onrender.com"
 ];
 connectDB();
 connectCloudinary();
